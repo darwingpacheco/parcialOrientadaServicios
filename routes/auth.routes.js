@@ -5,4 +5,5 @@ const authRouter = Router();
 
 authRouter.use("/", login);
 
+
 export default authRouter;

@@ -2,8 +2,8 @@ import { validationResult } from "express-validator";
 
 export const validate = ( validation ) => async(req,res, next) => {
     await Promise.all(
-        validation.map( (val) => val.run(req))
-    )
+        validation.map( (val) => val.run(req)));
+        const errors= validationResult(req);
 
     const error = validationResult(req);
     if(error.isEmpty()){
@@ -12,6 +12,6 @@ export const validate = ( validation ) => async(req,res, next) => {
 
     res.status(422).json({
         success: false,
-        errors: error
+        errors: error.array()
     });
 }

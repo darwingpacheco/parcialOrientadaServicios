@@ -20,17 +20,7 @@ export const postProductoValidator = checkSchema(
 
 );
 
-export const getProductoUnicoValidator = checkSchema(
-    {
-        id: {
-            errorMessage : "debe ingresar id del producto",
-            notEmpty: true,
-            isLength :  {
-                errorMessage: "debe ingresar id del producto",
-                Options: { min: 1, max: 100}
-            },
 
-        },
-    },
-    ["params"]
-);
+
+
+

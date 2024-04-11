@@ -18,8 +18,17 @@ export const login = async(req,res) => {
 
     }catch(error){
         console.log(error);
+
+        res.status(404).json({
+            success: false,
+            data: 'Servicio no disponible!',
+            token: '',
+            msn: error.message        
+        })
+
         res.status(401).json({
             success: false,
+            data: 'Servicio no disponible!',
             token: '',
             msn: error.message
         })
