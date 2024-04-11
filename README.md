@@ -15,7 +15,7 @@ Esta API permite obtener y almacenar información de productos varios, siempre y
 
 ### Clonar el repositorio:
 
-git clone https://github.com/darwingpacheco/pruebaService.git
+git clone https://github.com/darwingpacheco/parcialOrientadaServicios.git
 
 ## Instalación Manual
 
@@ -35,16 +35,25 @@ git clone https://github.com/darwingpacheco/pruebaService.git
  ## Variables de Entorno
 
 ###> CONFIG SERVER <###
+
 PORT = 8000
+
 ###> CONFIG SERVER <###
 
-###> DB CONNECTION <###
-DB_URL_PG=postgres://postgres:admin@localhost:5432/postgres
+
 ###> DB CONNECTION <###
 
+DB_URL_PG=postgres://postgres:admin@localhost:5432/postgres
+
+###> DB CONNECTION <###
+
+
 ###> JWT <###
+
 SECRET_KEY=HhjbNIJSDV2412:
+
 ###> JWT <###
+
 
 ## Estructura del Proyecto
 
