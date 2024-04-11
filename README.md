@@ -12,51 +12,60 @@ Esta API permite obtener y almacenar información de productos varios, siempre y
 * Instalación
 
 
-# Clonar el repositorio:
-git clone https://github.com/darwingpacheco/orientadaServicios01.git
+## Clonar el repositorio:
+git clone https://github.com/darwingpacheco/parcialOrientadaServicios.git
 
 
-# Instalación Manual
+## Instalación Manual
 npm install
 
-# Características
+## Características
 Node js
 NPM
 Comandos
 Run local:
 npm run dev
 
-# Variables de Entorno
-### CONFIG SERVER 
-#### PORT = 8000
+## Variables de Entorno
+#### CONFIG SERVER 
+##### PORT = 8000
 
-### DB CONNECTION 
-#### DB_URL_PG = postgres://postgres:admin@localhost:5432/postgres 
+#### DB CONNECTION 
+##### DB_URL_PG = postgres://postgres:admin@localhost:5432/postgres 
 
-### JWT
-#### SECRET_KEY = HhjbNIJSDV2412: 
+#### JWT
+##### SECRET_KEY = HhjbNIJSDV2412: 
 
 ## Estructura del Proyecto
-src
---config\ # Variables de entorno y configuración 
---controllers\ # Controladores 
---img\ # Imagenes públicas 
---middlewares\ # Middleware Personalizados 
---models\ # Postgrest models (data layer) 
---routes\ # Rutas del sistema 
---services\ # Servicios de conexión BD y Token 
---validator\ # Esquemas de validación 
---index.js # Express app
+
+### src
+#### Variables de entorno y configuración:
+--config\
+#### Controladores:
+--controllers\ 
+#### Middleware Personalizados:
+--middlewares\ 
+#### Postgrest models (data layer):
+--models\ 
+#### Rutas del sistema:
+--routes\ 
+#### Servicios de conexión BD y Token:
+--services\  
+#### Esquemas de validación:
+--validator\ 
+#### Express app:
+--index.js
 
 ## Endpoints:
 
 ### Gestión productos
 Producto
-  -- getProduct         (/producto/all)   GET
-  -- getProductoUnico   (/producto/:id)   GET
-  -- updateProducto     (/product/:id )   PUT
-  -- postProducto       (/productO)       POST
-  -- deleteProductAll   (/producto/all)   DELETE
-  -- deleteProduct      (/producto/:id)   DELETE
+-- getProduct         (/producto/all)   GET
+-- getProductoUnico   (/producto/:id)   GET
+-- updateProducto     (/product/:id )   PUT
+-- postProducto       (/productO)       POST
+-- deleteProductAll   (/producto/all)   DELETE
+-- deleteProduct      (/producto/:id)   DELETE
+
 auth
-    -- auth  (/auth)                      GET
+-- auth  (/auth)                      GET
