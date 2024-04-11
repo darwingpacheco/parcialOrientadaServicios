@@ -59,13 +59,21 @@ npm run dev
 ## Endpoints:
 
 ### Gestión productos
+
 Producto
--- getProduct         (/producto/all)   GET
+
+-- getProducto         (/producto/all)   GET
+
 -- getProductoUnico   (/producto/:id)   GET
--- updateProducto     (/product/:id )   PUT
--- postProducto       (/productO)       POST
+
+-- updateProducto     (/producto/:id )   PUT
+
+-- postProducto       (/producto)       POST
+
 -- deleteProductAll   (/producto/all)   DELETE
--- deleteProduct      (/producto/:id)   DELETE
+
+-- deleteProducto      (/producto/:id)   DELETE
 
 auth
+
 -- auth  (/auth)                      GET
