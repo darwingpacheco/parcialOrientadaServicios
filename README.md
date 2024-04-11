@@ -15,7 +15,7 @@ Esta API permite obtener y almacenar información de productos varios, siempre y
 
 ### Clonar el repositorio:
 
-git clone https://github.com/darwingpacheco/orientadaServicios01.git
+git clone https://github.com/darwingpacheco/pruebaService.git
 
 ## Instalación Manual
 
@@ -50,13 +50,21 @@ SECRET_KEY=HhjbNIJSDV2412:
 
 src\
  |--config\         # Variables de entorno y configuración 
+ 
  |--controllers\    # Controladores 
+ 
  |--img\            # Imagenes públicas
+ 
  |--middlewares\    # Middleware Personalizados
+
  |--models\         # Postgrest models (data layer) 
+ 
  |--routes\         # Rutas del sistema
+ 
  |--services\       # Servicios de conexión BD y Token 
+ 
  |--validator\      # Esquemas de validación
+ 
  |--index.js        # Express app
 
 
