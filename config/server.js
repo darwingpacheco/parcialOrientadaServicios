@@ -1,33 +1,44 @@
 import express from "express";
-import route  from "../routes/index.routes.js";
+import route from "../routes/index.routes.js";
 import pgService from "../server/pg.service.js";
 import { env } from "./default.js";
-import middleware from "../middlewares/index.middlewares.js"
-export default class Server{
+import middleware from "../middlewares/index.middlewares.js";
+import cors from "cors";
 
-    constructor(){
+export default class Server {
+
+    constructor() {
         this.app = express();
         this.port = 8000;
     }
 
-    connectionDB(){
+    connectionDB() {
         new pgService();
     }
-    middlewares(){
+
+    middlewares() {
+        // Configurar CORS para permitir solicitudes desde localhost:4200
+        this.app.use(cors({
+            origin: 'http://localhost:4200',
+            methods: ['GET', 'POST', 'PUT', 'DELETE'],
+            allowedHeaders: ['Content-Type', 'Authorization']
+        }));
+        
         this.app.use(express.json());
-        this.app.use(middleware)
-    }
-    routes(){
-        this.app.use(route)
+        this.app.use(middleware);
     }
 
-    runServer(){
-        this.app.listen(this.port, ()=>{
+    routes() {
+        this.app.use(route);
+    }
+
+    runServer() {
+        this.app.listen(this.port, () => {
             console.log(`Estoy en el puerto ${this.port}`);
-        })
+        });
     }
 
-    load(){
+    load() {
         this.connectionDB();
         this.middlewares();
         this.routes();

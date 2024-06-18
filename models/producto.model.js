@@ -61,10 +61,10 @@ export const createProductModel = async(data) =>{
         if (product[0]) {
             return {error: "Ya existe un producto con ese nombre", status: 409, msg: "Product don't save"};
         }
-        if(!data.nombre || !data.detalle || !data.valor){
+        if(!data.nombre || !data.detalle || !data.valor || !data.images ){
             return {error : "Todos los atributos del producto son obligatorios y el precio debe ser mayor a cero",status : 400, msg:"Product don't save"};
         }
-        await pg.connection.query(`insert into producto(nombre,detalle,valor) values($1,$2,$3)`, [data.nombre, data.detalle, data.valor]);
+        await pg.connection.query(`insert into producto(nombre,detalle,valor, images) values($1,$2,$3,$4)`, [data.nombre, data.detalle, data.valor, data.images]);
         return {success: "Producto guardado exitosamente", status: 201, msg: "Product save"};
     } catch(e){
         console.log(e);
