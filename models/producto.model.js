@@ -78,13 +78,13 @@ export const updateProductoModel = async (id, data) => {
         const product = await  pg.connection.query(`select * from producto where id_producto =$1`,[id]);
         if (!product[0]) {
             return {success:"Producto no existente ", status:404, msg:"Product don't update"};
-        }else if(!data.nombre || !data.detalle || !data.valor){
+        }else if(!data.nombre || !data.detalle || !data.valor || !data.images){
             return {error : "Todos los atributos del producto son obligatorios y el precio debe ser mayor a cero",status : 400, msg:"Product don't update"};
         }else if(product[0].id_producto == id){
             if(product[0].nombre == data.nombre && product[0].detalle == data.detalle && product[0].valor == data.valor){
                 return {success:"Los datos ingresados son los mismos a los que ya estan almacenados", status:200};
             }
-            await pg.connection.query(`update producto set nombre=$2, detalle=$3, valor=$4 where id_producto =$1`,[id, data.nombre, data.detalle, data.valor]);
+            await pg.connection.query(`update producto set nombre=$2, detalle=$3, valor=$4, images=$5 where id_producto =$1`,[id, data.nombre, data.detalle, data.valor, data.images]);
             return {success:"Producto actualizado exitosamente", status:200};
         }
     }catch(e){
